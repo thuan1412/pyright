@@ -750,13 +750,13 @@ export class SourceFile {
     parse(configOptions: ConfigOptions, importResolver: ImportResolver, content?: string): boolean {
         return this._logTracker.log(`parsing: ${this._getPathForLogging(this._filePath)}`, (logState) => {
             // If the file is already parsed, we can skip.
-            if (!this.isParseRequired()) {
-                logState.suppress();
-                return false;
-            }
+            // if (!this.isParseRequired()) {
+            //     logState.suppress();
+            //     return false;
+            // }
 
             const diagSink = new DiagnosticSink();
-            let fileContents = this.getOpenFileContents();
+            let fileContents = content;
             if (fileContents === undefined) {
                 try {
                     const startTime = timingStats.readFileTime.totalTime;

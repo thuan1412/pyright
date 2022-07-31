@@ -20,7 +20,9 @@
         "build": "webpack --mode production --progress",
         "clean": "shx rm -rf ./dist ./out README.md LICENSE.txt",
         "prepack": "npm run clean && shx cp ../../README.md . && shx cp ../../LICENSE.txt . && npm run build",
-        "webpack": "webpack --mode development --progress"
+        "webpack": "webpack --mode development --progress",
+        "watch": "webpack --mode development --progress --watch",
+        "indexer": "node indexer.index.js"
     },
     "devDependencies": {
         "@types/copy-webpack-plugin": "^10.1.0",

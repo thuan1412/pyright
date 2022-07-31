@@ -17,6 +17,7 @@ module.exports = (_, { mode }) => {
         entry: {
             pyright: './src/pyright.ts',
             'pyright-langserver': './src/langserver.ts',
+            'pyright-indexer': './src/indexer.ts',
         },
         target: 'node',
         output: {

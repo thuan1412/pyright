@@ -1525,7 +1525,11 @@ export class Program {
         });
     }
 
-    getFileIndex(filePath: string, options: IndexOptions, token: CancellationToken): IndexResults | undefined {
+    getFileIndex(
+        filePath: string,
+        options: IndexOptions,
+        token: CancellationToken = CancellationToken.None
+    ): IndexResults | undefined {
         if (options.indexingForAutoImportMode) {
             // Memory optimization. We only want to hold onto symbols
             // usable outside when importSymbolsOnly is on.
